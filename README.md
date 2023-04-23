@@ -25,11 +25,16 @@ low overhead.
 
 The embedshim needs to compile bpf with clang/llvm. So install clang/llvm as first.
 
+
 ```bash
-$ echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" | sudo tee -a /etc/apt/sources.lis
+$ echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal main" | sudo tee -a /etc/apt/sources.list
 $ wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 $ sudo apt-get update -y
 $ sudo apt-get install -y g++ libelf-dev clang lld llvm
+```
+centos
+```bash
+$ yum install -y gcc-c++ elfutils-libelf-devel clang lld llvm
 ```
 
 And then pull the repo and build it.
